@@ -15,7 +15,7 @@
           <component id="99904" class="javax.swing.JLabel">
             <constraints border-constraint="North"/>
             <properties>
-              <text value=" "/>
+              <text value=""/>
             </properties>
           </component>
           <grid id="f725e" layout-manager="BorderLayout" hgap="0" vgap="0">
@@ -28,10 +28,16 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <component id="af0ba" class="javax.swing.JLabel">
-                    <constraints border-constraint="North"/>
+                  <component id="af0ba" class="javax.swing.JLabel" binding="welcomeLabel">
+                    <constraints border-constraint="West"/>
                     <properties>
                       <text value="Welcome, user!"/>
+                    </properties>
+                  </component>
+                  <component id="e8480" class="javax.swing.JButton" binding="logoutButton" default-binding="true">
+                    <constraints border-constraint="East"/>
+                    <properties>
+                      <text value="Logout"/>
                     </properties>
                   </component>
                 </children>
@@ -88,16 +94,7 @@
             <constraints border-constraint="Center"/>
             <properties/>
             <border type="none"/>
-            <children>
-              <scrollpane id="498">
-                <constraints>
-                  <tabbedpane title="Untitled"/>
-                </constraints>
-                <properties/>
-                <border type="none"/>
-                <children/>
-              </scrollpane>
-            </children>
+            <children/>
           </tabbedpane>
         </children>
       </grid>

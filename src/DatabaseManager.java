@@ -9,11 +9,11 @@ enum User {
 }
 
 public class DatabaseManager {
-    private static String URL = "";
-    private static String username = "";
-    private static String password = "";
+    private static String URL = "jdbc:mysql://";
+    private static String username = "java";
+    private static String password = "java";
 
-    public static User verifyLogin(String username, String password) {
+    public static User verifyLogin(String username, String password, int[] id) {
 
         if (Objects.equals(username, "admin") && Objects.equals(password, "dbadmin123"))
             return User.ADMIN;
@@ -23,19 +23,35 @@ public class DatabaseManager {
                 );
 
             rs.next();
-            if (Objects.equals(rs.getString("username"), username))
+            if (Objects.equals(rs.getString("username"), username)) {
+                id[0] = rs.getInt("ID");
                 return User.TRAINEE;
+            }
             else {
                 rs = execute(
                     "SELECT * FROM trainer WHERE username = '" + username + "' AND password = '" + password + "';"
                 );
                 rs.next();
-                if (Objects.equals(rs.getString("username"), username))
+                if (Objects.equals(rs.getString("username"), username)) {
+                    id[0] = rs.getInt("ID");
                     return User.TRAINER;
+                }
             }
         }
         catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
+            try {
+                ResultSet rs = execute(
+                        "SELECT * FROM trainer WHERE username = '" + username + "' AND password = '" + password + "';"
+                );
+                rs.next();
+                if (Objects.equals(rs.getString("username"), username)) {
+                    id[0] = rs.getInt("ID");
+                    return User.TRAINER;
+                }
+            }
+            catch (SQLException s) {
+                JOptionPane.showMessageDialog(null, s.getMessage());
+            }
         }
 
         return null;
@@ -53,6 +69,22 @@ public class DatabaseManager {
         return resultSet;
     }
 
+    public ResultSet selectTable(String table, String columns) {
+
+        ResultSet resultSet = null;
+        try {
+            resultSet = execute("SELECT " + columns + " FROM " + table);
+        }
+        catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getStackTrace());
+        }
+        return resultSet;
+    }
+
+    public ResultSet selectTable(String table) {
+        return selectTable(table, "*");
+    }
+
     public static ResultSet execute(String sql) throws SQLException {
         Connection c = DriverManager.getConnection(URL, username, password);
         PreparedStatement ps = c.prepareStatement(sql);
@@ -60,3 +92,53 @@ public class DatabaseManager {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

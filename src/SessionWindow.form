@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="SessionWindow">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="320" height="248"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="1fe4e" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints border-constraint="Center"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="e7a5c" class="javax.swing.JLabel">
+            <constraints border-constraint="East"/>
+            <properties>
+              <text value="   "/>
+            </properties>
+          </component>
+          <component id="b3bc" class="javax.swing.JLabel">
+            <constraints border-constraint="West"/>
+            <properties>
+              <text value="   "/>
+            </properties>
+          </component>
+          <grid id="979c0" layout-manager="BorderLayout" hgap="0" vgap="0">
+            <constraints border-constraint="Center"/>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <grid id="4d7a2" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints border-constraint="North"/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="bdff4" layout-manager="BorderLayout" hgap="0" vgap="0">
+                    <constraints border-constraint="West"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="dc17a" class="javax.swing.JLabel">
+                        <constraints border-constraint="Center"/>
+                        <properties>
+                          <text value="Course ID"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <grid id="495e7" layout-manager="BorderLayout" hgap="0" vgap="0">
+                    <constraints border-constraint="East"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="1cebe" class="javax.swing.JTextArea" binding="courseIDText">
+                        <constraints border-constraint="East"/>
+                        <properties>
+                          <columns value="25"/>
+                          <editable value="false"/>
+                          <enabled value="true"/>
+                          <text value="Please wait..."/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+              <grid id="a0e6e" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints border-constraint="Center"/>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <grid id="8cd9b" layout-manager="BorderLayout" hgap="0" vgap="0">
+                    <constraints border-constraint="North"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <grid id="61bb3" layout-manager="BorderLayout" hgap="0" vgap="0">
+                        <constraints border-constraint="West"/>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="e7c" class="javax.swing.JLabel">
+                            <constraints border-constraint="Center"/>
+                            <properties>
+                              <text value="Course Name"/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                      <grid id="70ed3" layout-manager="BorderLayout" hgap="0" vgap="0">
+                        <constraints border-constraint="East"/>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <component id="b5510" class="javax.swing.JTextArea" binding="courseNameText">
+                            <constraints border-constraint="East"/>
+                            <properties>
+                              <columns value="25"/>
+                              <editable value="false"/>
+                              <enabled value="true"/>
+                              <text value="Please wait..."/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                  <grid id="ae146" layout-manager="BorderLayout" hgap="0" vgap="0">
+                    <constraints border-constraint="Center"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <grid id="913f" layout-manager="BorderLayout" hgap="0" vgap="0">
+                        <constraints border-constraint="North"/>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <grid id="c3b10" layout-manager="BorderLayout" hgap="0" vgap="0">
+                            <constraints border-constraint="West"/>
+                            <properties/>
+                            <border type="none"/>
+                            <children>
+                              <component id="f737" class="javax.swing.JLabel">
+                                <constraints border-constraint="Center"/>
+                                <properties>
+                                  <text value="Course Cost"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <grid id="f0706" layout-manager="BorderLayout" hgap="0" vgap="0">
+                            <constraints border-constraint="East"/>
+                            <properties/>
+                            <border type="none"/>
+                            <children>
+                              <component id="482a7" class="javax.swing.JTextArea" binding="courseCostText">
+                                <constraints border-constraint="East"/>
+                                <properties>
+                                  <columns value="25"/>
+                                  <editable value="false"/>
+                                  <text value="Please wait..."/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                        </children>
+                      </grid>
+                      <grid id="b3e8f" layout-manager="BorderLayout" hgap="0" vgap="0">
+                        <constraints border-constraint="Center"/>
+                        <properties/>
+                        <border type="none"/>
+                        <children>
+                          <grid id="e9690" layout-manager="BorderLayout" hgap="0" vgap="0">
+                            <constraints border-constraint="North"/>
+                            <properties/>
+                            <border type="none"/>
+                            <children>
+                              <grid id="831df" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                <constraints border-constraint="West"/>
+                                <properties/>
+                                <border type="none"/>
+                                <children>
+                                  <component id="4095b" class="javax.swing.JLabel">
+                                    <constraints border-constraint="Center"/>
+                                    <properties>
+                                      <text value="Contact Hours"/>
+                                    </properties>
+                                  </component>
+                                </children>
+                              </grid>
+                              <grid id="4f96e" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                <constraints border-constraint="East"/>
+                                <properties/>
+                                <border type="none"/>
+                                <children>
+                                  <component id="d241e" class="javax.swing.JTextArea" binding="contactHoursText">
+                                    <constraints border-constraint="East"/>
+                                    <properties>
+                                      <columns value="25"/>
+                                      <editable value="false"/>
+                                      <text value="Please wait..."/>
+                                    </properties>
+                                  </component>
+                                </children>
+                              </grid>
+                            </children>
+                          </grid>
+                          <grid id="d5d87" layout-manager="BorderLayout" hgap="0" vgap="0">
+                            <constraints border-constraint="Center"/>
+                            <properties/>
+                            <border type="none"/>
+                            <children>
+                              <grid id="1e5c0" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                <constraints border-constraint="North"/>
+                                <properties/>
+                                <border type="none"/>
+                                <children>
+                                  <grid id="89cd9" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                    <constraints border-constraint="West"/>
+                                    <properties/>
+                                    <border type="none"/>
+                                    <children>
+                                      <component id="31a82" class="javax.swing.JLabel">
+                                        <constraints border-constraint="Center"/>
+                                        <properties>
+                                          <text value="Course's Field"/>
+                                        </properties>
+                                      </component>
+                                    </children>
+                                  </grid>
+                                  <grid id="c97bf" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                    <constraints border-constraint="East"/>
+                                    <properties/>
+                                    <border type="none"/>
+                                    <children>
+                                      <component id="b288" class="javax.swing.JTextArea" binding="courseFieldText">
+                                        <constraints border-constraint="East"/>
+                                        <properties>
+                                          <columns value="25"/>
+                                          <editable value="false"/>
+                                          <text value="Please wait..."/>
+                                        </properties>
+                                      </component>
+                                    </children>
+                                  </grid>
+                                </children>
+                              </grid>
+                              <component id="f113" class="javax.swing.JLabel">
+                                <constraints border-constraint="South"/>
+                                <properties>
+                                  <text value=" "/>
+                                </properties>
+                              </component>
+                              <grid id="7492f" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                <constraints border-constraint="Center"/>
+                                <properties/>
+                                <border type="none"/>
+                                <children>
+                                  <component id="3cae3" class="javax.swing.JLabel">
+                                    <constraints border-constraint="North"/>
+                                    <properties>
+                                      <text value=" "/>
+                                    </properties>
+                                  </component>
+                                  <grid id="d353c" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                    <constraints border-constraint="Center"/>
+                                    <properties/>
+                                    <border type="none"/>
+                                    <children>
+                                      <grid id="bdfa9" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                        <constraints border-constraint="North"/>
+                                        <properties/>
+                                        <border type="none"/>
+                                        <children>
+                                          <grid id="b0df7" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                            <constraints border-constraint="West"/>
+                                            <properties/>
+                                            <border type="none"/>
+                                            <children>
+                                              <component id="1e235" class="javax.swing.JLabel">
+                                                <constraints border-constraint="Center"/>
+                                                <properties>
+                                                  <text value="Session Name"/>
+                                                </properties>
+                                              </component>
+                                            </children>
+                                          </grid>
+                                          <grid id="2c4b6" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                            <constraints border-constraint="East"/>
+                                            <properties/>
+                                            <border type="none"/>
+                                            <children>
+                                              <component id="e1a15" class="javax.swing.JTextArea" binding="sessionName">
+                                                <constraints border-constraint="East"/>
+                                                <properties>
+                                                  <columns value="25"/>
+                                                  <editable value="false"/>
+                                                  <text value="Please wait..."/>
+                                                </properties>
+                                              </component>
+                                            </children>
+                                          </grid>
+                                        </children>
+                                      </grid>
+                                      <grid id="19778" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                        <constraints border-constraint="Center"/>
+                                        <properties/>
+                                        <border type="none"/>
+                                        <children>
+                                          <grid id="32f86" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                            <constraints border-constraint="North"/>
+                                            <properties/>
+                                            <border type="none"/>
+                                            <children>
+                                              <grid id="c2fd0" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                                <constraints border-constraint="West"/>
+                                                <properties/>
+                                                <border type="none"/>
+                                                <children>
+                                                  <component id="64e27" class="javax.swing.JLabel">
+                                                    <constraints border-constraint="Center"/>
+                                                    <properties>
+                                                      <text value="Session Hours"/>
+                                                    </properties>
+                                                  </component>
+                                                </children>
+                                              </grid>
+                                              <grid id="369ef" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                                <constraints border-constraint="East"/>
+                                                <properties/>
+                                                <border type="none"/>
+                                                <children>
+                                                  <component id="a1c68" class="javax.swing.JTextArea" binding="sessionHours">
+                                                    <constraints border-constraint="East"/>
+                                                    <properties>
+                                                      <columns value="25"/>
+                                                      <editable value="false"/>
+                                                      <text value="Please wait..."/>
+                                                    </properties>
+                                                  </component>
+                                                </children>
+                                              </grid>
+                                            </children>
+                                          </grid>
+                                          <grid id="90462" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                            <constraints border-constraint="Center"/>
+                                            <properties/>
+                                            <border type="none"/>
+                                            <children>
+                                              <grid id="96473" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                                <constraints border-constraint="North"/>
+                                                <properties/>
+                                                <border type="none"/>
+                                                <children>
+                                                  <grid id="43842" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                                    <constraints border-constraint="West"/>
+                                                    <properties/>
+                                                    <border type="none"/>
+                                                    <children>
+                                                      <component id="1821a" class="javax.swing.JLabel">
+                                                        <constraints border-constraint="Center"/>
+                                                        <properties>
+                                                          <text value="Day of Week"/>
+                                                        </properties>
+                                                      </component>
+                                                    </children>
+                                                  </grid>
+                                                  <grid id="e07ee" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                                    <constraints border-constraint="East"/>
+                                                    <properties/>
+                                                    <border type="none"/>
+                                                    <children>
+                                                      <component id="15a3a" class="javax.swing.JTextArea" binding="dayOfWeek">
+                                                        <constraints border-constraint="East"/>
+                                                        <properties>
+                                                          <columns value="25"/>
+                                                          <editable value="false"/>
+                                                          <text value="Please wait..."/>
+                                                        </properties>
+                                                      </component>
+                                                    </children>
+                                                  </grid>
+                                                </children>
+                                              </grid>
+                                              <grid id="34f97" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                                <constraints border-constraint="Center"/>
+                                                <properties/>
+                                                <border type="none"/>
+                                                <children>
+                                                  <grid id="fc942" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                                    <constraints border-constraint="North"/>
+                                                    <properties/>
+                                                    <border type="none"/>
+                                                    <children>
+                                                      <grid id="52559" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                                        <constraints border-constraint="West"/>
+                                                        <properties/>
+                                                        <border type="none"/>
+                                                        <children>
+                                                          <component id="cebff" class="javax.swing.JLabel">
+                                                            <constraints border-constraint="Center"/>
+                                                            <properties>
+                                                              <text value="Location"/>
+                                                            </properties>
+                                                          </component>
+                                                        </children>
+                                                      </grid>
+                                                      <grid id="326bf" layout-manager="BorderLayout" hgap="0" vgap="0">
+                                                        <constraints border-constraint="East"/>
+                                                        <properties/>
+                                                        <border type="none"/>
+                                                        <children>
+                                                          <component id="24fe" class="javax.swing.JTextArea" binding="location">
+                                                            <constraints border-constraint="East"/>
+                                                            <properties>
+                                                              <columns value="25"/>
+                                                              <editable value="false"/>
+                                                              <text value="Please wait..."/>
+                                                            </properties>
+                                                          </component>
+                                                        </children>
+                                                      </grid>
+                                                    </children>
+                                                  </grid>
+                                                </children>
+                                              </grid>
+                                            </children>
+                                          </grid>
+                                        </children>
+                                      </grid>
+                                    </children>
+                                  </grid>
+                                </children>
+                              </grid>
+                            </children>
+                          </grid>
+                        </children>
+                      </grid>
+                    </children>
+                  </grid>
+                </children>
+              </grid>
+            </children>
+          </grid>
+        </children>
+      </grid>
+      <component id="3c673" class="javax.swing.JLabel">
+        <constraints border-constraint="North"/>
+        <properties>
+          <text value=" "/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

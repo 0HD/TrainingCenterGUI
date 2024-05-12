@@ -29,17 +29,20 @@ public class LoginFrame {
                                 textField1.setEditable(false);
                                 passwordField1.setEditable(false);
                                 String password = new String(passwordField1.getPassword());
-                                User type = DatabaseManager.verifyLogin(textField1.getText(), password);
+                                int[] id = new int[1];
+                                User type = DatabaseManager.verifyLogin(textField1.getText(), password, id);
                                 UserFrame uf = null;
                                 if (type == User.ADMIN) {
                                     uf = new AdminFrame();
                                 } else if (type == User.TRAINEE) {
-                                    uf = new UserFrame();
+                                    uf = new TraineeFrame(id[0]);
                                 } else if (type == User.TRAINER) {
-                                    uf = new UserFrame();
+                                    uf = new TrainerFrame(id[0]);
                                 }
 
                                 if (uf != null) {
+                                    textField1.setText(null);
+                                    passwordField1.setText(null);
                                     JFrame frame = TrainingCenterGUI.getFrame();
                                     frame.setContentPane(uf.getUI());
                                     frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

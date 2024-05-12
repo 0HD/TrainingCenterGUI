@@ -1,16 +1,52 @@
+import sun.print.ServiceDialog;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class UserFrame {
     private JPanel panel1;
     private JTabbedPane tabbedPane1;
+    private JLabel welcomeLabel;
+    private JButton logoutButton;
 
     public JTabbedPane getTabbedPane() {
         return tabbedPane1;
     }
 
+    public JLabel getWelcomeLabel() {
+        return welcomeLabel;
+    }
+
     public JComponent getUI() {
         return $$$getRootComponent$$$();
+    }
+
+    public UserFrame(String username) {
+        welcomeLabel.setText("Welcome, " + username + "!");
+        logoutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SwingWorker s = new SwingWorker() {
+                    @Override
+                    protected Object doInBackground() throws Exception {
+                        TrainingCenterGUI.showLoginFrame();
+                        return null;
+                    }
+                };
+                s.execute();
+            }
+        });
+    }
+
+
+    public static void openSearch(String name) {
+        JFrame frame = new JFrame(name);
+        frame.setContentPane(new SearchForX().$$$getRootComponent$$$());
+        frame.pack();
+        frame.setResizable(false);
+        frame.setVisible(true);
     }
 
     {
@@ -34,7 +70,7 @@ public class UserFrame {
         panel2.setLayout(new BorderLayout(0, 0));
         panel1.add(panel2, BorderLayout.NORTH);
         final JLabel label1 = new JLabel();
-        label1.setText(" ");
+        label1.setText("");
         panel2.add(label1, BorderLayout.NORTH);
         final JPanel panel3 = new JPanel();
         panel3.setLayout(new BorderLayout(0, 0));
@@ -42,34 +78,35 @@ public class UserFrame {
         final JPanel panel4 = new JPanel();
         panel4.setLayout(new BorderLayout(0, 0));
         panel3.add(panel4, BorderLayout.CENTER);
-        final JLabel label2 = new JLabel();
-        label2.setText("Welcome, user!");
-        panel4.add(label2, BorderLayout.NORTH);
+        welcomeLabel = new JLabel();
+        welcomeLabel.setText("Welcome, user!");
+        panel4.add(welcomeLabel, BorderLayout.WEST);
+        logoutButton = new JButton();
+        logoutButton.setText("Logout");
+        panel4.add(logoutButton, BorderLayout.EAST);
         final JPanel panel5 = new JPanel();
         panel5.setLayout(new BorderLayout(0, 0));
         panel3.add(panel5, BorderLayout.WEST);
-        final JLabel label3 = new JLabel();
-        label3.setText("    ");
-        panel5.add(label3, BorderLayout.NORTH);
+        final JLabel label2 = new JLabel();
+        label2.setText("    ");
+        panel5.add(label2, BorderLayout.NORTH);
         final JPanel panel6 = new JPanel();
         panel6.setLayout(new BorderLayout(0, 0));
         panel2.add(panel6, BorderLayout.EAST);
-        final JLabel label4 = new JLabel();
-        label4.setText("    ");
-        panel6.add(label4, BorderLayout.WEST);
+        final JLabel label3 = new JLabel();
+        label3.setText("    ");
+        panel6.add(label3, BorderLayout.WEST);
         final JPanel panel7 = new JPanel();
         panel7.setLayout(new BorderLayout(0, 0));
         panel1.add(panel7, BorderLayout.SOUTH);
-        final JLabel label5 = new JLabel();
-        label5.setText(" ");
-        panel7.add(label5, BorderLayout.NORTH);
+        final JLabel label4 = new JLabel();
+        label4.setText(" ");
+        panel7.add(label4, BorderLayout.NORTH);
         final JPanel panel8 = new JPanel();
         panel8.setLayout(new BorderLayout(0, 0));
         panel1.add(panel8, BorderLayout.CENTER);
         tabbedPane1 = new JTabbedPane();
         panel8.add(tabbedPane1, BorderLayout.CENTER);
-        final JScrollPane scrollPane1 = new JScrollPane();
-        tabbedPane1.addTab("Untitled", scrollPane1);
     }
 
     /**
