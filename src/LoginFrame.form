@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="LoginFrame">
   <grid id="27dc6" binding="UI" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
-      <xy x="20" y="20" width="302" height="168"/>
+      <xy x="20" y="20" width="366" height="171"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -25,6 +25,7 @@
                   <component id="15ffa" class="javax.swing.JLabel">
                     <constraints border-constraint="North"/>
                     <properties>
+                      <font size="16" style="1"/>
                       <horizontalAlignment value="0"/>
                       <text value="Training Center"/>
                     </properties>
@@ -133,8 +134,8 @@
                           <component id="4e87" class="javax.swing.JButton" binding="loginButton" default-binding="true">
                             <constraints/>
                             <properties>
-                              <label value="                         Login                         "/>
-                              <text value="                         Login                         "/>
+                              <label value="                              Login                              "/>
+                              <text value="                              Login                              "/>
                             </properties>
                           </component>
                         </children>

@@ -1,11 +1,76 @@
 import javax.swing.*;
+import javax.swing.plaf.FontUIResource;
+import javax.swing.text.StyleContext;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Locale;
 
 public class LoginFrame {
     private JPanel UI;
     private JTextField textField1;
     private JButton loginButton;
     private JPasswordField passwordField1;
+
+    public JButton getLoginButton() {
+        return loginButton;
+    }
+
+    LoginFrame() {
+        loginButton.addActionListener(
+                new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        SwingWorker s = new SwingWorker() {
+                            @Override
+                            protected Object doInBackground() throws Exception {
+                                loginButton.setText("                        Logging in...                        ");
+                                loginButton.setEnabled(false);
+                                textField1.setEditable(false);
+                                passwordField1.setEditable(false);
+                                String password = new String(passwordField1.getPassword());
+                                User type = DatabaseManager.verifyLogin(textField1.getText(), password);
+                                UserFrame uf = null;
+                                if (type == User.ADMIN) {
+                                    uf = new AdminFrame();
+                                } else if (type == User.TRAINEE) {
+                                    uf = new UserFrame();
+                                } else if (type == User.TRAINER) {
+                                    uf = new UserFrame();
+                                }
+
+                                if (uf != null) {
+                                    JFrame frame = TrainingCenterGUI.getFrame();
+                                    frame.setContentPane(uf.getUI());
+                                    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                                    frame.pack();
+                                    frame.setSize(600, 500);
+                                    frame.setMinimumSize(frame.getSize());
+                                    frame.setMaximumSize(null);
+                                    frame.setResizable(true);
+                                    frame.setVisible(true);
+                                    frame.getRootPane().setDefaultButton(null);
+                                }
+
+                                return type;
+                            }
+
+                            protected void done() {
+                                try {
+                                    loginButton.setEnabled(true);
+                                    loginButton.setText("                              Login                              ");
+                                    textField1.setEditable(true);
+                                    passwordField1.setEditable(true);
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        };
+                        s.execute();
+                    }
+                }
+        );
+    }
 
     public JComponent getUI() {
         return $$$getRootComponent$$$();
@@ -38,6 +103,8 @@ public class LoginFrame {
         panel3.setLayout(new BorderLayout(0, 0));
         panel2.add(panel3, BorderLayout.NORTH);
         final JLabel label1 = new JLabel();
+        Font label1Font = this.$$$getFont$$$(null, Font.BOLD, 16, label1.getFont());
+        if (label1Font != null) label1.setFont(label1Font);
         label1.setHorizontalAlignment(0);
         label1.setText("Training Center");
         panel3.add(label1, BorderLayout.NORTH);
@@ -87,8 +154,8 @@ public class LoginFrame {
         panel9.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
         panel7.add(panel9, BorderLayout.CENTER);
         loginButton = new JButton();
-        loginButton.setLabel("                         Login                         ");
-        loginButton.setText("                         Login                         ");
+        loginButton.setLabel("                              Login                              ");
+        loginButton.setText("                              Login                              ");
         panel9.add(loginButton);
         final JPanel panel10 = new JPanel();
         panel10.setLayout(new BorderLayout(0, 0));
@@ -108,6 +175,28 @@ public class LoginFrame {
         final JLabel label8 = new JLabel();
         label8.setText(" ");
         panel12.add(label8, BorderLayout.NORTH);
+    }
+
+    /**
+     * @noinspection ALL
+     */
+    private Font $$$getFont$$$(String fontName, int style, int size, Font currentFont) {
+        if (currentFont == null) return null;
+        String resultName;
+        if (fontName == null) {
+            resultName = currentFont.getName();
+        } else {
+            Font testFont = new Font(fontName, Font.PLAIN, 10);
+            if (testFont.canDisplay('a') && testFont.canDisplay('1')) {
+                resultName = fontName;
+            } else {
+                resultName = currentFont.getName();
+            }
+        }
+        Font font = new Font(resultName, style >= 0 ? style : currentFont.getStyle(), size >= 0 ? size : currentFont.getSize());
+        boolean isMac = System.getProperty("os.name", "").toLowerCase(Locale.ENGLISH).startsWith("mac");
+        Font fontWithFallback = isMac ? new Font(font.getFamily(), font.getStyle(), font.getSize()) : new StyleContext().getFont(font.getFamily(), font.getStyle(), font.getSize());
+        return fontWithFallback instanceof FontUIResource ? fontWithFallback : new FontUIResource(fontWithFallback);
     }
 
     /**
